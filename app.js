@@ -9,7 +9,11 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 
 app.get('/', function(req, res) {
-        res.render('stats');
+    res.render('stats');
+});
+
+app.get('/start-up', function(req, res) {
+    res.render('start-up');
 });
 
 app.post('/api/get-data', async (req, res) => {
