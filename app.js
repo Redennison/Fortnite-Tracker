@@ -20,7 +20,12 @@ app.post('/api/get-data', async (req, res) => {
     const { username, platform } = req.body;
 
     const url = `https://fortnite-api.com/v1/stats/br/v2/?name=${username}`;
-    const options = { method: "GET" };
+    const options = { 
+        method: "GET" 
+        headers: {
+            "Authorization": "8b512b94-ec32-40c2-8507-942017f63d56"
+        }
+    };
 
     try {
         var result = await fetch(url, options)
