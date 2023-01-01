@@ -23,7 +23,7 @@ app.post('/api/get-data', async (req, res) => {
     const options = { 
         method: "GET",
         headers: {
-            "Authorization": "8b512b94-ec32-40c2-8507-942017f63d56"
+            "Authorization": process.env.KEY
         }
     };
 
