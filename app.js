@@ -34,8 +34,13 @@ app.post('/api/get-data', async (req, res) => {
                 console.log(err);
             });
 
+        console.log(result);
         if (result.status === 404) {
             return res.json({ status: 'error', error: "This username doesn't exist. Please try another username." });
+        }
+
+        if (result.status === 403) {
+            return res.json({ status: 'error', error: "The requested account\'s stats are not public"});
         }
 
         var profile = result['data']['stats'][platform];
